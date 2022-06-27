@@ -31,52 +31,60 @@
         
             if (playerSelection == 1 && computerSelection == 1)
             {
-             alert("Tie game");
              player1+=1;
              computer1+=1;
+             return("Tie game");
+             
             }
 
             else if(playerSelection==1&&computerSelection==2)
-            {
-                alert("Computer wins paper wins over rock!");
+            {            
                 computer1+=1;
+                return("Computer wins paper wins over rock!");
             }
             else if(playerSelection==1&&computerSelection==3)
             {
-                alert("Player wins rock sharpens scissor!");
                 player1+=1;
+                return("Player wins rock sharpens scissor!");
+                
             }
             else if(playerSelection==2&&computerSelection==1)
             {
-                alert("Player wins paper covers rock");
                 player1+=1;
+                return("Player wins paper covers rock");
+                
             }
             else if(playerSelection==2&&computerSelection==3)
             {
-                alert("Computer wins scissor cuts paper!");
                 computer1+=1;
+                return("Computer wins scissor cuts paper!");
+                
             }
             else if(playerSelection==3&&computerSelection==1)
             {
-                alert("Computer wins rock sharpens scissor!");
                 computer1+=1;
+                return("Computer wins rock sharpens scissor!");
+                
             }
             else if(playerSelection==3&&computerSelection==2)
             {
-                alert("Player wins scissor cuts paper!");
                 player1+=1;
+                return("Player wins scissor cuts paper!");
+                
             }
             else if(playerSelection==2&&computerSelection==2)
             {
-                alert("Tie Paper wraps paper");
                 player1+=1;
                 computer1+=1;
+                return("Tie Paper wraps paper");
+                
             }
             else 
             {
-                alert("Scissor sharpens scissor tie game");
                 player1+=1;
                 computer1+=1;
+                return("Scissor sharpens scissor tie game");
+                
             }
         }
             
@@ -96,7 +104,8 @@
             {
                 input=prompt("1. Rock 2. Paper or 3. Scissor?");
                 var computersPick=computerPlay();
-                playSingleRound(input,computersPick);
+                var roundsGame=playSingleRound(input,computersPick);
+                alert(roundsGame);
                 alert(`Player1 has ${player1} points`);
                 alert(`Computer has ${computer1} points`);
 
