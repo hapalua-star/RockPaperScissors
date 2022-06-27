@@ -25,9 +25,38 @@
          }
         }
 
-        input=prompt("Play game!");
-        var a=computerPlay();
-        alert(a);
+
+        function playSingleRound(playerSelection,computerSelection)
+        {
+         if(playerSelection==computerSelection)
+         {
+             return("Tie game");
+         }
+         else if(computerSelection==("Paper"))
+         {
+             return("Computer had Paper and wins!");
+         }
+         else 
+         {
+             return("Computer had Scissors and loses!");
+         }
+        }
+
+
+        function game()
+        {
+            for (let i = 0; i < 5; i++)
+            {
+                input=prompt("Rock Paper or Scissor?");
+                var computersPick=computerPlay();
+                var gameOne=playSingleRound(input,computersPick);
+                alert(gameOne);
+
+            }
+        }
+
+        game();
+       
 
 
 
