@@ -102,9 +102,28 @@
             
             for (let i = 0; i < 5; i++)
             {
+                var userInput;
                 input=prompt("1. Rock 2. Paper or 3. Scissor?");
+                if (input.toLowerCase()=="rock")
+                {
+                  userInput=1;
+                }
+                else if(input.toLowerCase()=="paper")
+                {
+                  userInput=2;
+                }
+                else if(input.toLowerCase()=="scissor")
+                {
+                  userInput=3;
+                }
+                else
+                {
+                  alert("Game crash");
+                  throw new error("Game exits!")
+                }
+
                 var computersPick=computerPlay();
-                var roundsGame=playSingleRound(input,computersPick);
+                var roundsGame=playSingleRound(userInput,computersPick);
                 alert(roundsGame);
                 alert(`Player1 has ${player1} points`);
                 alert(`Computer has ${computer1} points`);
