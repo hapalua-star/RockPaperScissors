@@ -7,85 +7,529 @@
     <title>Document</title>
 </head>
 <body>
+
+<button id="clicker1">Rock</button>
+<button id="clicker2">Paper</button>
+<button id="clicker3">Scissor</button>
+
+
+<h1>Results</h1>
+<div id="container">
+    
+
+
+
+</div>
+
+
     <script>
 
-        function computerPlay(){
+            
+
+
+
+
+
+        function playSingleRound(playerSelection)
+        {
+            
+        
          var i=Math.random();
+         var compare;
          if(i<=.33)
          {        
-         return (1);//1 means rock
+          compare= (1);//1 means rock
          }
          else if(i<=.66 && i>.33)
          {
-         return (2);//2 means paper
+          compare= (2);//2 means paper
          }
          else
          {
-         return(3); //3 means scissor
+          compare=(3); //3 means scissor
          }
-        }
-
-
-        function playSingleRound(playerSelection,computerSelection)
-        {
-        
-            if (playerSelection == 1 && computerSelection == 1)
+            if (playerSelection == 1 && compare == 1)   //Rock vs rock section
             {
-             player1+=1;
-             computer1+=1;
-             return("Tie game");
+            
+            computer1+=1;
+            player1+=1;
+
+            if((player1==5) || (computer1 ==5)) 
+               {
+                if (player1>computer1)
+                {
+                
+                const winner=document.createElement('p');
+                winner.textContent= (`Rock vs rock tie game Player has ${player1} points. Computer ${computer1} points.`);
+                container.appendChild(winner);
+                const won=document.createElement('p');
+                won.textContent="Player has won!";
+                container.appendChild(won);
+                }
+
+
+                else if(computer1>player1)
+                {
+                   
+                    const winner=document.createElement('p');
+                winner.textContent= (`Rock vs rock tie game Player has ${player1} points. Computer ${computer1} points.`);
+                container.appendChild(winner);
+                const won=document.createElement('p');
+                    won.textContent="Computer has won!";
+                    container.appendChild(won);
+                    
+
+                }
+                else
+                {
+                    
+                    const winner=document.createElement('p');
+                winner.textContent= (`Rock vs rock tie game Player has ${player1} points. Computer ${computer1} points.`);
+                container.appendChild(winner);
+                const won=document.createElement('p');
+                    won.textContent="Both players tied!";
+                    container.appendChild(won);
+                   
+
+                }
+              }
+         
+             else{
+             const container = document.querySelector('#container');
+             const winner=document.createElement('p');
+             winner.textContent=(`Tie game! Player has ${player1} points. Computer ${computer1} points.`);
+             container.appendChild(winner);
+             }
+             
+             
+             
+             
              
             }
 
-            else if(playerSelection==1&&computerSelection==2)
+            else if(playerSelection==1&&compare==2) //rock vs paper section
             {            
+            
+                
                 computer1+=1;
-                return("Computer wins paper wins over rock!");
+
+                if((player1==5) || (computer1 ==5))
+               {
+                if (player1>computer1)
+                {
+                
+                const winner=document.createElement('p');
+                winner.textContent= (`Computer wins paper wraps rock Player has ${player1} points. Computer ${computer1} points.`);
+                container.appendChild(winner);
+                const won=document.createElement('p');
+                won.textContent="Player has won!";
+                container.appendChild(won);
+                }
+
+
+                else if(computer1>player1)
+                {
+                    
+                    const winner=document.createElement('p');
+                winner.textContent= (`Computer wins paper wraps rock Player has ${player1} points. Computer ${computer1} points.`);
+                container.appendChild(winner);
+                const won=document.createElement('p');
+                    won.textContent="Computer has won!";
+                    container.appendChild(won);
+
+                    
+
+                }
+                else
+                {
+                    
+                    const winner=document.createElement('p');
+                winner.textContent= (`Computer wins paper wraps rock. Player has ${player1} points. Computer ${computer1} points.`);
+                container.appendChild(winner);
+                const won=document.createElement('p');
+                    won.textContent="Both players tied!";
+                    container.appendChild(won);
+
+                }
+              }
+              else{
+                const container = document.querySelector('#container');
+                const winner=document.createElement('p');
+                winner.textContent=(`Computer wins paper wins over rock! Player has ${player1} points. Computer ${computer1} points.`);
+                container.appendChild(winner);
+              }
+             
+             
+          
+             
+
+                
             }
-            else if(playerSelection==1&&computerSelection==3)
+            else if(playerSelection==1&&compare==3) //rock vs scissor section
             {
                 player1+=1;
-                return("Player wins rock sharpens scissor!");
+
+                if((player1==5) || (computer1 ==5))
+               {
+                if (player1>computer1)
+                {
+                
+                const winner=document.createElement('p');
+                winner.textContent= (`Player wins rock sharpens scissor. Player has ${player1} points. Computer ${computer1} points.`);
+                container.appendChild(winner);
+                const won=document.createElement('p');
+                won.textContent="Player has won!";
+                container.appendChild(won);
+                }
+
+
+                else if(computer1>player1)
+                {
+                    
+                    const winner=document.createElement('p');
+                winner.textContent= (`Player wins rock sharpens scissor Player has ${player1} points. Computer ${computer1} points.`);
+                container.appendChild(winner);
+                const won=document.createElement('p');
+                    won.textContent="Computer has won!";
+                    container.appendChild(won);
+                    
+
+                }
+                else
+                {
+                    
+                    const winner=document.createElement('p');
+                winner.textContent= (`Player wins rock sharpens scissor Player has ${player1} points. Computer ${computer1} points.`);
+                container.appendChild(winner);
+                const won=document.createElement('p');
+                    won.textContent="Both players tied!";
+                    container.appendChild(won);
+                   
+
+                }
+              }
+              else{
+                const container = document.querySelector('#container');
+                const winner=document.createElement('p');
+                winner.textContent=(`Player wins rock sharpens scissor! Player has ${player1} points. Computer ${computer1} points.`);
+                container.appendChild(winner);
+              }
+
+             
+             
+             
                 
             }
-            else if(playerSelection==2&&computerSelection==1)
+            else if(playerSelection==2&&compare==1) //paper vs rock section
             {
                 player1+=1;
-                return("Player wins paper covers rock");
+                if((player1==5) || (computer1 ==5))
+               {
+                if (player1>computer1)
+                {
                 
+                const winner=document.createElement('p');
+                winner.textContent= (`Player wins paper wraps rock. Player has ${player1} points. Computer ${computer1} points.`);
+                container.appendChild(winner);
+                const won=document.createElement('p');    
+                won.textContent="Player has won!";
+                container.appendChild(won);
+                }
+
+
+                else if(computer1>player1)
+                {
+                    
+                    const winner=document.createElement('p');
+                winner.textContent= (`Player wins paper wraps rock. Player has ${player1} points. Computer ${computer1} points.`);
+                container.appendChild(winner);
+                const won=document.createElement('p');
+                    won.textContent="Computer has won!";
+                    container.appendChild(won);
+                    
+
+                }
+                else
+                {
+                    
+                    const winner=document.createElement('p');
+                winner.textContent= (`Player wins paper wraps rock. Player has ${player1} points. Computer ${computer1} points.`);
+                container.appendChild(winner);
+                const won=document.createElement('p');
+                    won.textContent="Both players tied!";
+                    container.appendChild(won);
+                   
+
+                }
+              }
+              else{
+                const container = document.querySelector('#container');
+                const winner=document.createElement('p');
+                winner.textContent=  (`Player wins paper covers rock Player has ${player1} points. Computer ${computer1} points.`);
+                container.appendChild(winner);
+              }
+              
+             
             }
-            else if(playerSelection==2&&computerSelection==3)
+            else if(playerSelection==2&&compare==3) // paper vs scissor section
             {
                 computer1+=1;
-                return("Computer wins scissor cuts paper!");
+
+                if((player1==5) || (computer1 ==5))
+               {
+                if (player1>computer1)
+                {
                 
+                const winner=document.createElement('p');
+                winner.textContent= (`Computer wins scissor cuts paper. Player has ${player1} points. Computer ${computer1} points.`);
+                container.appendChild(winner);
+                const won=document.createElement('p');
+                won.textContent="Player has won!";
+                container.appendChild(won);
+                }
+
+
+                else if(computer1>player1)
+                {
+                   
+                    const winner=document.createElement('p');
+                    winner.textContent= (`Computer wins scissor cuts paper. Player has ${player1} points. Computer ${computer1} points.`);
+                    container.appendChild(winner);
+                    const won=document.createElement('p');
+                    won.textContent="Computer has won!";
+                    container.appendChild(won);
+                    
+
+                }
+                else
+                {
+                    
+                    const winner=document.createElement('p');
+                    winner.textContent= (`Computer wins scissor cuts paper. Player has ${player1} points. Computer ${computer1} points.`);
+                    container.appendChild(winner);
+                    const won=document.createElement('p');
+                    won.textContent="Both players tied!";
+                    container.appendChild(won);
+                   
+
+                }
+              }
+              else{
+                const container = document.querySelector('#container');
+                const winner=document.createElement('p');
+                winner.textContent=  (`Computer wins scissor cuts paper!Player has ${player1} points. Computer ${computer1} points.`);
+                container.appendChild(winner);
+              }
+             
             }
-            else if(playerSelection==3&&computerSelection==1)
+            else if(playerSelection==3&&compare==1) //scissor vs rock section
             {
                 computer1+=1;
-                return("Computer wins rock sharpens scissor!");
+
+                if((player1==5) || (computer1 ==5))
+               {
+                if (player1>computer1)
+                {
                 
+                const winner=document.createElement('p');
+                winner.textContent= (`Player wins rock sharpens scissor. Player has ${player1} points. Computer ${computer1} points.`);
+                container.appendChild(winner);
+                const won=document.createElement('p');
+                won.textContent="Player has won!";
+                container.appendChild(won);
+                }
+
+
+                else if(computer1>player1)
+                {
+                    
+                    const winner=document.createElement('p');
+                    winner.textContent= (`Player wins rock sharpens scissor. Player has ${player1} points. Computer ${computer1} points.`);
+                    container.appendChild(winner);
+                    const won=document.createElement('p');
+                    won.textContent="Computer has won!";
+                    container.appendChild(won);
+                    
+
+                }
+                else
+                {
+                    
+                    const winner=document.createElement('p');
+                    winner.textContent= (`Player wins rock sharpens scissor. Player has ${player1} points. Computer ${computer1} points.`);
+                    container.appendChild(winner);
+                    const won=document.createElement('p');
+                    won.textContent="Both players tied!";
+                    container.appendChild(won);
+                   
+
+                }
+              }
+              else{
+                const container = document.querySelector('#container');
+                const winner=document.createElement('p');
+                winner.textContent=  (`Computer wins rock sharpens scissor! Player has ${player1} points. Computer ${computer1} points.` );
+                container.appendChild(winner);
+              }
+             
             }
-            else if(playerSelection==3&&computerSelection==2)
+            else if(playerSelection==3&&compare==2)  //scissor vs paper section
             {
                 player1+=1;
-                return("Player wins scissor cuts paper!");
+
+                if((player1==5) || (computer1 ==5))
+               {
+                if (player1>computer1)
+                {
                 
+                const winner=document.createElement('p');
+                winner.textContent= (`Player wins scissor cuts paper. Player has ${player1} points. Computer ${computer1} points.`);
+                container.appendChild(winner);
+                const won=document.createElement('p');    
+                won.textContent="Player has won!";
+                container.appendChild(won);
+                }
+
+
+                else if(computer1>player1)
+                {
+                    
+                    const winner=document.createElement('p');
+                    winner.textContent= (`Player wins scissor cuts paper. Player has ${player1} points. Computer ${computer1} points.`);
+                    container.appendChild(winner);
+                    const won=document.createElement('p');
+                    won.textContent="Computer has won!";
+                    container.appendChild(won);
+                    
+
+                }
+                else
+                {
+                    
+                    const winner=document.createElement('p');
+                    winner.textContent= (`Player wins scissor cuts paper. Player has ${player1} points. Computer ${computer1} points.`);
+                    container.appendChild(winner);
+                    const won=document.createElement('p');
+                    won.textContent="Both players tied!";
+                    container.appendChild(won);
+                   
+
+                }
+              }
+              else{
+                const container = document.querySelector('#container');
+                const winner=document.createElement('p');
+                winner.textContent= (`Player wins scissor cuts paper! Player has ${player1} points. Computer ${computer1} points.`);
+                container.appendChild(winner);
+              }
+            
             }
-            else if(playerSelection==2&&computerSelection==2)
+            else if(playerSelection==2&&compare==2) //paper vs paper section
             {
                 player1+=1;
                 computer1+=1;
-                return("Tie Paper wraps paper");
+
+                if((player1==5) || (computer1 ==5))
+               {
+                if (player1>computer1)
+               {
                 
+                const winner=document.createElement('p');
+                winner.textContent= (`Scissor sharpens scissor tie game Player has ${player1} points. Computer ${computer1} points.`);
+                container.appendChild(winner);
+                const won=document.createElement('p');
+                won.textContent="Player has won!";
+                container.appendChild(won);
+                }
+
+
+                else if(computer1>player1)
+                {
+                   
+                    const winner=document.createElement('p');
+                    winner.textContent= (`Scissor sharpens scissor tie game Player has ${player1} points. Computer ${computer1} points.`);
+                    container.appendChild(winner);
+                    const won=document.createElement('p');
+                    won.textContent="Computer has won!";
+                    container.appendChild(won);
+                    
+
+                }
+                else
+                {
+                    
+                    const winner=document.createElement('p');
+                    winner.textContent= (`Scissor sharpens scissor tie game Player has ${player1} points. Computer ${computer1} points.`);
+                    container.appendChild(winner);
+                    const won=document.createElement('p');
+                    won.textContent="Both players tied!";
+                    container.appendChild(won);
+                   
+
+                }
+              }
+              else{
+                const container = document.querySelector('#container');
+                const winner=document.createElement('p');
+                winner.textContent= (`Tie Paper wraps paper Player has ${player1} points. Computer ${computer1} points.`);
+                container.appendChild(winner);
+              }
+                
+             
             }
             else 
             {
                 player1+=1;
                 computer1+=1;
-                return("Scissor sharpens scissor tie game");
+
+                if((player1==5) || (computer1 ==5))
+               {
+                if (player1>computer1)
+                {
+                
+                const winner=document.createElement('p');
+                winner.textContent= (`Scissor sharpens scissor tie game Player has ${player1} points. Computer ${computer1} points.`);
+                container.appendChild(winner);
+                const won=document.createElement('p');
+                won.textContent="Player has won!";
+                container.appendChild(won);
+                }
+
+
+                else if(computer1>player1)
+                {
+                    
+                    const winner=document.createElement('p');
+                    winner.textContent= (`Scissor sharpens scissor tie game Player has ${player1} points. Computer ${computer1} points.`);
+                    container.appendChild(winner);
+                    const won=document.createElement('p');
+                    won.textContent="Computer has won!";
+                    container.appendChild(won);
+
+                }
+                else
+                {
+                    
+                    const winner=document.createElement('p');
+                    winner.textContent= (`Scissor sharpens scissor tie game Player has ${player1} points. Computer ${computer1} points.`);
+                    container.appendChild(winner);
+                    const won=document.createElement('p');
+                    won.textContent="Both players tied!";
+                    container.appendChild(won);
+
+                }
+              }
+              else{
+                const container = document.querySelector('#container');
+                const winner=document.createElement('p');
+                winner.textContent= (`Scissor sharpens scissor tie game Player has ${player1} points. Computer ${computer1} points.`);
+                container.appendChild(winner);
+              }
+            
                 
             }
+            
+        
         }
             
             
@@ -94,61 +538,29 @@
        
 
 
-        function game()
-        {
-            
-            
-            
-            
-            for (let i = 0; i < 5; i++)
-            {
-                var userInput;
-                input=prompt("1. Rock 2. Paper or 3. Scissor?");
-                if (input.toLowerCase()=="rock")
-                {
-                  userInput=1;
-                }
-                else if(input.toLowerCase()=="paper")
-                {
-                  userInput=2;
-                }
-                else if(input.toLowerCase()=="scissor")
-                {
-                  userInput=3;
-                }
-                else
-                {
-                  alert("Game crash");
-                  throw new error("Game exits!")
-                }
-
-                var computersPick=computerPlay();
-                var roundsGame=playSingleRound(userInput,computersPick);
-                alert(roundsGame);
-                alert(`Player1 has ${player1} points`);
-                alert(`Computer has ${computer1} points`);
-
-               
-            }
-        }
-        
         var player1=0;
         var computer1=0;
-        game(); 
-        if(player1>computer1)
-        {
-            alert("Player1 wins game!");
-        }      
-        else if(player1<computer1)
-        {
-            alert("Computer wins game!");
-        }
-        else
-        {
-            alert("Tie game!");
-        }
 
+            
+           const click1=document.querySelector("#clicker1");
+           click1.addEventListener("click",playSingleRound.bind(null,1));
+            
+           const click2=document.querySelector("#clicker2");
+           click2.addEventListener("click",playSingleRound.bind(null,2));
+           
+           const click3=document.querySelector("#clicker3");
+           click3.addEventListener("click",playSingleRound.bind(null,3));
+
+             
+               
+       
+       
+       
+         
+        
+    
 
     </script>
 </body>
 </html>
+
